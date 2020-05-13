@@ -1,0 +1,6 @@
+notes.txt
+# pixelmator
+*.pxm
+
+# original wall photo, exclude from public src
+wall.jpg
