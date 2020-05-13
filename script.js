@@ -13,6 +13,13 @@ document.querySelectorAll('.guide').forEach((item, i) => {
   });
 });
 
+// Cover now that there's a postcard wrapper
+document.querySelectorAll('.guide').forEach((item, i) => {
+  item.addEventListener("click", (e) => {
+    e.target.parentElement.parentElement.classList.remove('fadeIn');
+  });
+});
+
 document.querySelector('#closeHelp').addEventListener("click", (e) => {
   instructions.classList.add('fadeIn');
 });

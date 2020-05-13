@@ -21,12 +21,6 @@ html, body {
   height: 100%;
 }
 
-img {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
 a {
   cursor: grab;
   /* Used for debugging link positioning: */
@@ -39,7 +33,7 @@ a {
   }
 
   100% {
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 
@@ -52,7 +46,7 @@ a {
   width: 40%;
   margin: 0 auto;
   position: absolute;
-  background: #ded;
+  background: #efefef;
   padding: 20px;
   top: 20%;
   opacity: 0;
@@ -61,6 +55,7 @@ a {
   animation-fill-mode: both;
   -webkit-animation-fill-mode: both;
   border-radius: 0 20px 20px 0;
+  font-family: Consolas, Courier New, monospace;
 }
 
 .overlay.fadeIn {
@@ -73,6 +68,39 @@ a {
   color: purple;
 }
 
+#intro {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+}
+
+.left {
+  width: 60%;
+}
+.right {
+  width:40%;
+}
+
+.postmark {
+  max-width: 140px;
+  max-height: 140px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  opacity: 0.7;
+}
+
+.address {
+  margin: 70% 0 0 30%;
+
+}
+
 #footer {
   text-align: center;
 }
+
+/*
+Add a media query for the intro to look postcard width
+@media  {
+
+} */
