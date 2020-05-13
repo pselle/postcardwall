@@ -12,7 +12,7 @@ html, body {
 }
 
 #wall {
-  background: url(./wall_plus.jpg);
+  background: url(./img/wall_plus.jpg);
   background-size: cover;
   position: absolute;
   top: 0;
