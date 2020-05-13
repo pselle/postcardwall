@@ -37,21 +37,32 @@ a {
   }
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
 
 .overlay {
-  width: 40%;
+  display: flex;
+  max-width: 800px;
   margin: 0 auto;
   position: absolute;
   background: #efefef;
   padding: 20px;
   top: 20%;
   opacity: 0;
-  animation-duration: 10s;
-  -webkit-animation-duration: 10s;
+  animation-duration: 8s;
+  -webkit-animation-duration: 8s;
   animation-fill-mode: both;
   -webkit-animation-fill-mode: both;
   border-radius: 0 20px 20px 0;
@@ -67,12 +78,6 @@ a {
   text-decoration: underline;
   cursor: pointer;
   color: purple;
-}
-
-#intro {
-  display: flex;
-  width: 100%;
-  max-width: 800px;
 }
 
 .left {
@@ -102,6 +107,38 @@ a {
 
 /*
 Add a media query for the intro to look postcard width
-@media  {
-
-} */
+*/
+@media (max-width: 700px) {
+  .overlay {
+    top: 5%;
+  }
+  .overlay {
+    animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+  }
+  .left {
+    width:90%;
+  }
+  .right {
+    width: 10%;
+  }
+  .postmark {
+    opacity: 20%;
+    right: 30%;
+  }
+  .address {
+    display: none;
+  }
+}
+/* Hide mobile instructions on bigger screens */
+@media (min-width: 400px) {
+  .mobile-instructions {
+    opacity: 0;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
