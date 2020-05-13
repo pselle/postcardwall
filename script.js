@@ -2,14 +2,22 @@
 // of what this is
 
 var intro = document.querySelector('#intro');
-window.setTimeout(function() {
-  intro.classList.add('fadeIn');
-}, 5000);
+var instructions = document.querySelector('#instructions');
+// window.setTimeout(function() {
+//   intro.classList.add('fadeIn');
+// }, 5000);
 
-document.querySelector('#closeIntro').addEventListener("click", (e) => {
-  intro.classList.remove('fadeIn');
+document.querySelectorAll('.guide').forEach((item, i) => {
+  item.addEventListener("click", (e) => {
+    e.target.parentElement.classList.remove('fadeIn');
+  });
 });
 
+document.querySelector('#closeHelp').addEventListener("click", (e) => {
+  instructions.classList.add('fadeIn');
+});
+
+// Do some stuff with the links probably ... rn they link out to Instagram
 // document.querySelectorAll('a').forEach((item, i) => {
 //   item.addEventListener("click", (e) => {
 //     e.preventDefault();
