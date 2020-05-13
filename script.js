@@ -3,9 +3,9 @@
 
 var intro = document.querySelector('#intro');
 var instructions = document.querySelector('#instructions');
-// window.setTimeout(function() {
-//   intro.classList.add('fadeIn');
-// }, 5000);
+window.setTimeout(function() {
+  intro.classList.add('fadeIn');
+}, 3000);
 
 document.querySelectorAll('.guide').forEach((item, i) => {
   item.addEventListener("click", (e) => {
