@@ -3,6 +3,9 @@
 
 var intro = document.querySelector('#intro');
 var instructions = document.querySelector('#instructions');
+var imgOverlay = document.querySelector('#img-overlay');
+var imgFront = imgOverlay.querySelector('.front');
+var imgBack = imgOverlay.querySelector('.back');
 window.setTimeout(function() {
   // Fade in the intro
   intro.classList.add('fadeIn');
@@ -25,13 +28,27 @@ document.querySelector('#closeHelp').addEventListener("click", (e) => {
   instructions.classList.add('fadeIn');
 });
 
+document.querySelector('#img-overlay span').addEventListener("click", (e) => {
+  imgOverlay.classList.remove('fadeIn');
+});
+
 // Do some stuff with the links probably ... rn they link out to Instagram
 document.querySelectorAll('a').forEach((item, i) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
-    debugger;
+    // Update the overlay with this thing's info
+    var name = e.target.title;
+    console.log(name)
+    var srcset_front = `./postcards/${name}_front-480w.jpeg 480w,./postcards/${name}_front-800w.jpeg 800w`;
+    var srcset_back = `./postcards/${name}_back-480w.jpeg 480w,./postcards/${name}_back-800w.jpeg 800w`;
+    imgFront.src = `${name}_front-480w.jpeg`;
+    imgFront.srcset = srcset_front;
+    imgBack.src = `${name}_back-480w.jpeg`;
+    imgBack.srcset = srcset_back;
+    imgOverlay.classList.add('fadeIn');
   })
 });
+
 
 var introTextOptions = ["Someone once told me you shouldn't bother taking pictures without people when you travel, " +
   "because you can always buy a postcard with a much better photograph taken by a professional." +

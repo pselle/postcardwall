@@ -76,7 +76,6 @@ a {
 
 #img-overlay {
   background: #efefef;
-  z-index: 8;
   max-width: 100%;
   position: absolute;
   top: 0;
@@ -84,6 +83,16 @@ a {
   opacity: 1;
   padding:30px;
   text-align: center;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+}
+
+/* Image overlay on hover */
+#img-overlay.fadeIn .flipper {
+  cursor: grab;
 }
 
 #img-overlay a {
@@ -106,7 +115,6 @@ a {
 /* flip the pane when hovered */
 .flip-container:hover .flipper, .flip-container.hover .flipper {
 	transform: rotateY(180deg);
-  cursor: grab;
 }
 
 .flip-container, .front, .back {
