@@ -65,6 +65,19 @@ var introTextOptions = ["Someone once told me you shouldn't bother taking pictur
   " so then the question was, what to do with them?"
 ];
 
-// Swap out the intro text for a random selection of the options
+// Swap out the intro text for a random selection of the options for enhanced spookiness
 var randomIntro = introTextOptions[Math.floor(Math.random() * introTextOptions.length)];
 intro.querySelector('p').innerText = randomIntro;
+
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    var isEscape = false;
+    if ("key" in evt) {
+        isEscape = (evt.key === "Escape" || evt.key === "Esc");
+    } else {
+        isEscape = (evt.keyCode === 27);
+    }
+    if (isEscape) {
+      imgOverlay.classList.remove('fadeIn');
+    }
+};
