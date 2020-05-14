@@ -6,10 +6,10 @@ var instructions = document.querySelector('#instructions');
 var imgOverlay = document.querySelector('#img-overlay');
 var imgFront = imgOverlay.querySelector('.front');
 var imgBack = imgOverlay.querySelector('.back');
-window.setTimeout(function() {
-  // Fade in the intro
-  intro.classList.add('fadeIn');
-}, 1500);
+// window.setTimeout(function() {
+//   // Fade in the intro
+//   intro.classList.add('fadeIn');
+// }, 1500);
 
 document.querySelectorAll('.guide').forEach((item, i) => {
   item.addEventListener("click", (e) => {
