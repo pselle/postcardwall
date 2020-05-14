@@ -55,7 +55,7 @@
       <a href="https://www.instagram.com/p/BmQbsLFDUpF/" title="jfk" style="position: absolute; left: 63.16%; top: 51.31%; width: 10.31%; height: 9.79%; z-index: 2;"></a>
       <a href="https://www.instagram.com/p/BmPcxwqjJHn/" title="berlin" style="position: absolute; left: 36.6%; top: 29.9%; width: 9.92%; height: 9.42%; z-index: 2;"></a>
     </div>
-    <section id="intro" class="overlay fadeIn">
+    <section id="intro" class="overlay">
       <div class="left">
         <p>For years, I've collected postcards and put them on my wall, to mark places I've been,
           places that inpired me, or things I just plain like. In 2018 as part of a major life
@@ -92,6 +92,30 @@
         <p id="foo" class="guide">Close this</p>
       </div>
     </section>
+  </div>
+  <div id="img-overlay">
+    <span>×</span>
+    <div class="flip-container">
+    <div class="flipper">
+    <img class="front"
+         srcset="./postcards/berlin_front-480w.jpeg 480w,
+                 ./postcards/berlin_front-800w.jpeg 800w"
+         sizes="(max-width: 600px) 480px,
+                800px"
+         src="./postcards/berlin_front-800w.jpg"
+         alt="Caption goes here">
+     <img
+      class="back"
+          srcset="./postcards/berlin_back-480w.jpeg 480w,
+                  ./postcards/berlin_back-800w.jpeg 800w"
+          sizes="(max-width: 600px) 480px,
+                 800px"
+          src="./postcards/berlin_back-800w.jpg"
+          alt="Caption goes here">
+        </div>
+      </div>
+    <a href="/">See the corresponding Instagram post</a>
+    <!-- <img src="./postcards/berlin_front.jpg" alt="Caption goes here"> -->
   </div>
 
   <div id="footer">A project by <a href="https://thewebivore.com/">Pam Selle</a></div>

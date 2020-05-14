@@ -74,6 +74,76 @@ a {
   z-index: 3;
 }
 
+#img-overlay {
+  background: #efefef;
+  z-index: 8;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 415px);
+  opacity: 1;
+  padding:30px;
+  text-align: center;
+}
+
+#img-overlay a {
+  color: #000;
+  cursor: pointer;
+}
+
+#img-overlay > span {
+  position: absolute;
+  right: 12.5px;
+  top: 10px;
+  cursor: pointer;
+}
+
+/* https://davidwalsh.name/css-flip */
+.flip-container {
+	perspective: 1000px;
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+	transform: rotateY(180deg);
+  cursor: grab;
+}
+
+.flip-container, .front, .back {
+	width: 800px;
+	height: 800px;
+  margin-bottom: 15px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
 .guide {
   text-decoration: underline;
   cursor: pointer;
@@ -83,8 +153,9 @@ a {
 .left {
   width: 60%;
 }
+
 .right {
-  width:40%;
+  width: 40%;
 }
 
 .postmark {
@@ -98,7 +169,6 @@ a {
 
 .address {
   margin: 70% 0 0 30%;
-
 }
 
 #footer {
@@ -112,24 +182,30 @@ Add a media query for the intro to look postcard width
   .overlay {
     top: 5%;
   }
+
   .overlay {
     animation-duration: 3s;
     -webkit-animation-duration: 3s;
   }
+
   .left {
-    width:90%;
+    width: 90%;
   }
+
   .right {
     width: 10%;
   }
+
   .postmark {
     opacity: 20%;
     right: 30%;
   }
+
   .address {
     display: none;
   }
 }
+
 /* Hide mobile instructions on bigger screens */
 @media (min-width: 400px) {
   .mobile-instructions {

@@ -6,7 +6,7 @@ var instructions = document.querySelector('#instructions');
 window.setTimeout(function() {
   // Fade in the intro
   intro.classList.add('fadeIn');
-}, 3000);
+}, 1500);
 
 document.querySelectorAll('.guide').forEach((item, i) => {
   item.addEventListener("click", (e) => {
@@ -26,12 +26,12 @@ document.querySelector('#closeHelp').addEventListener("click", (e) => {
 });
 
 // Do some stuff with the links probably ... rn they link out to Instagram
-// document.querySelectorAll('a').forEach((item, i) => {
-//   item.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     debugger;
-//   })
-// });
+document.querySelectorAll('a').forEach((item, i) => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    debugger;
+  })
+});
 
 var introTextOptions = ["Someone once told me you shouldn't bother taking pictures without people when you travel, " +
   "because you can always buy a postcard with a much better photograph taken by a professional." +
