@@ -6,10 +6,12 @@ var instructions = document.querySelector('#instructions');
 var imgOverlay = document.querySelector('#img-overlay');
 var imgFront = imgOverlay.querySelector('.front');
 var imgBack = imgOverlay.querySelector('.back');
-// window.setTimeout(function() {
-//   // Fade in the intro
-//   intro.classList.add('fadeIn');
-// }, 1500);
+var instLink = imgOverlay.querySelector('a');
+
+window.setTimeout(function() {
+  // Fade in the intro
+  intro.classList.add('fadeIn');
+}, 1500);
 
 document.querySelectorAll('.guide').forEach((item, i) => {
   item.addEventListener("click", (e) => {
@@ -33,18 +35,20 @@ document.querySelector('#img-overlay span').addEventListener("click", (e) => {
 });
 
 // Do some stuff with the links probably ... rn they link out to Instagram
-document.querySelectorAll('a').forEach((item, i) => {
+document.querySelectorAll('#wall a').forEach((item, i) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
     // Update the overlay with this thing's info
     var name = e.target.title;
-    console.log(name)
     var srcset_front = `./postcards/${name}_front-480w.jpeg 480w,./postcards/${name}_front-800w.jpeg 800w`;
     var srcset_back = `./postcards/${name}_back-480w.jpeg 480w,./postcards/${name}_back-800w.jpeg 800w`;
     imgFront.src = `${name}_front-480w.jpeg`;
     imgFront.srcset = srcset_front;
+    imgFront.alt = e.target.dataset.caption;
     imgBack.src = `${name}_back-480w.jpeg`;
     imgBack.srcset = srcset_back;
+    imgBack.alt = e.target.dataset.caption;
+    instLink.href = e.target.href;
     imgOverlay.classList.add('fadeIn');
   })
 });
