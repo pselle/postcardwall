@@ -78,7 +78,7 @@ a {
   background: #efefef;
   max-width: 100%;
   position: absolute;
-  top: 0;
+  top: 5%;
   left: calc(50% - 430px);
   opacity: 1;
   padding:30px;
@@ -162,6 +162,11 @@ a {
   text-align: center;
 }
 
+@media (max-width: 1500px) {
+  #img-overlay {
+    left: calc(50% - 330px);
+  }
+}
 /*
 Add a media query for the intro to look postcard width
 */
