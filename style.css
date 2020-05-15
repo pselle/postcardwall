@@ -207,16 +207,3 @@ Add a media query for the intro to look postcard width
     background: #efefef;
   }
 }
-
-/* Hide mobile instructions on bigger screens */
-@media (min-width: 400px) {
-  .mobile-instructions {
-    opacity: 0;
-    -webkit-animation-name: fadeOut;
-    animation-name: fadeOut;
-    animation-duration: 1.5s;
-    -webkit-animation-duration: 1.5s;
-    animation-fill-mode: both;
-    -webkit-animation-fill-mode: both;
-  }
-}
