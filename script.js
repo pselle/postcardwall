@@ -44,10 +44,10 @@ document.querySelectorAll('#wall a').forEach((item, i) => {
     var srcset_back = `./postcards/${name}_back-480w.jpeg 480w,./postcards/${name}_back-800w.jpeg 800w`;
     imgFront.src = `${name}_front-480w.jpeg`;
     imgFront.srcset = srcset_front;
-    imgFront.alt = e.target.dataset.caption;
+    imgFront.title = e.target.dataset.caption;
     imgBack.src = `${name}_back-480w.jpeg`;
     imgBack.srcset = srcset_back;
-    imgBack.alt = e.target.dataset.caption;
+    imgBack.title = e.target.dataset.caption;
     instLink.href = e.target.href;
     imgOverlay.classList.add('fadeIn');
   })
