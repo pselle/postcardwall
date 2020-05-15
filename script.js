@@ -45,6 +45,7 @@ document.querySelectorAll('#wall a').forEach((item, i) => {
     imgFront.src = `${name}_front-480w.jpeg`;
     imgFront.srcset = srcset_front;
     imgFront.title = e.target.dataset.caption;
+    imgFront.alt = e.target.dataset.alt;
     imgBack.src = `${name}_back-480w.jpeg`;
     imgBack.srcset = srcset_back;
     imgBack.title = e.target.dataset.caption;
